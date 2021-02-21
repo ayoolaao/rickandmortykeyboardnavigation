@@ -13,9 +13,9 @@
 
 .App__grid {
   display: grid;
-  justify-self: center;
-  align-self: baseline;
-  grid-gap: 18px;
-  max-width: 100vh;
-  margin-top: 32px;
+  //max-width: 100vh;
+  //justify-self: center;
+  //align-self: baseline;
+  grid-gap: 0.6%;
+  margin: 1%;
 }

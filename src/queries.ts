@@ -6,20 +6,8 @@ export const RICK_AND_MORTY_CHARACTERS = gql`
             results {
                 id
                 name
-                status
-                species
-                location {
-                    id
-                    name
-                    dimension
-                }
                 image
                 gender
-                origin {
-                    id
-                    name
-                    dimension
-                }
             }
         }
     }

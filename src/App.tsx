@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './app.scss';
 import { useQuery } from '@apollo/client';
 import { RICK_AND_MORTY_CHARACTERS } from './queries';
-import { CARDS_PER_ROW } from './constants';
+import { ACTIVE_CARD, CARDS_PER_ROW } from './constants';
 import Card from './components/card/Card';
 import Navbar from './components/navbar/Navbar';
 
@@ -45,10 +45,10 @@ const App = () => {
     const currentCard = document.querySelector(`article[data-index="${currentCardIndex}"]`) as HTMLElement;
     const nextCard = document.querySelector(`article[data-index="${nextCardIndex}"]`) as HTMLElement;
 
-    if(currentCard?.classList.contains('active-card')) currentCard.classList.remove('active-card')
+    if(currentCard?.classList.contains(ACTIVE_CARD)) currentCard.classList.remove(ACTIVE_CARD)
 
     nextCard?.focus();
-    nextCard?.classList.add('active-card')
+    nextCard?.classList.add(ACTIVE_CARD);
   }
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const App = () => {
     if(characters) {
       const initialCard = document.querySelector(`article[data-index="${startCardIndex}"]`) as HTMLElement;
       initialCard?.focus()
-      initialCard?.classList.add('active-card')
+      initialCard?.classList.add(ACTIVE_CARD)
     }
 
     return () => { window.removeEventListener('keydown', handleKeyBoardNavigation) }
@@ -70,7 +70,7 @@ const App = () => {
     if (characters) {
       const cardsWrapper = document.querySelector('div.App__grid') as HTMLElement;
       console.log(cardsWrapper);
-      cardsWrapper.style.gridTemplateColumns = `repeat(${cardsPerRow}, 1fr)`;
+      cardsWrapper.style.gridTemplateColumns = `repeat(${cardsPerRow}, minmax(160px, 260px))`;
     }
   }, [characters])
 

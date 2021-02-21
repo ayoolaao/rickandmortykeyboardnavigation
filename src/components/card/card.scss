@@ -1,57 +1,62 @@
 .card {
-  overflow: hidden;
+  display: flex;
   border: 2px solid transparent;
-  border-radius: 8%;
   padding: 2%;
+  position: relative;
+  &__active {
+    animation: scaleOut ease-in-out;
+    animation-duration: 500ms;
+  }
   &__avatar {
-    border-radius: 6%;
-    height: 100%;
-    width: 100%;
-    object-position: center center;
-    object-fit: cover;
-  }
-  &__details {
-    display: grid;
-  }
-  &__name-gender {
     display: flex;
+    overflow: hidden;
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
   }
-  &__status {
+  &__summary {
     display: flex;
-    align-items: baseline;
-  }
-  &__alive {
-    margin-right: 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: green;
-  }
-  &__dead {
-    margin-right: 8px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: darkred;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    z-index: 10;
+    width: 96%;
+    height: 96%;
+    background: rgba(0, 0, 0, 0.8);
+    &__name {
+      color: #ffeb3b;
+    }
   }
   &:focus {
     outline: none !important;
-    border: 4px solid #bebc0a;
+    border: 2px solid #ffeb3b;
     background: rgba(0, 0, 0, 0.2);
   }
-}
-
-.active-card {
-  transform: scale(1.1);
-  animation: scaleOut ease;
-  animation-duration: 500ms;
+  &:hover {
+    outline: none !important;
+    border: 2px solid #d2d2d2;
+  }
+  &:before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(16/16 * 100%);
+  }
 }
 
 @keyframes scaleOut {
   0% {
     transform: scale(1.0);
   }
-  100% {
-    transform: scale(1.1);
+  50% {
+    transform: scale(1.05);
+  }
+  0% {
+    transform: scale(1.0);
   }
 }
