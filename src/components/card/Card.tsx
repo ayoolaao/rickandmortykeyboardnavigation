@@ -1,17 +1,6 @@
 import React from 'react';
 import './card.scss';
 
-type Props = {
-  id: string
-  name: string
-  status: string
-  species: string
-  location : object
-  image: string
-  gender: string
-  origin: object
-}
-
 const Card: React.FC<any> = ({ character, index }) => {
   const {
     image,
