@@ -1,0 +1,21 @@
+.App {
+  //height: 100vh;
+  display: grid;
+  //justify-items: center;
+  &__loading {
+    display: grid;
+    align-items: center;
+    height: 50vh;
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+.App__grid {
+  display: grid;
+  justify-self: center;
+  align-self: baseline;
+  grid-gap: 18px;
+  max-width: 100vh;
+  margin-top: 32px;
+}

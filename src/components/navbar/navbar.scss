@@ -1,0 +1,19 @@
+.navbar {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 100px auto;
+  margin-bottom: 16px;
+  height: 52px;
+  border-bottom: 1px solid #000000;
+  background: #fff;
+  font-weight: 500;
+  &__ayoola {
+    //background: black;
+    //color: #ffffff;
+    //height: 100%;
+  }
+  &__title {
+    font-size: 24px;
+  }
+}
