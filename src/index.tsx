@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.scss';
 import App from './App';
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
-  cache: new InMemoryCache()
-});
+import { ApolloProvider } from '@apollo/client';
+import client from './api/client';
 
 ReactDOM.render(
   <React.StrictMode>

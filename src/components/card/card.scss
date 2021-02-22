@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  border: 2px solid transparent;
+  border-radius: 6%;
+  padding: 2%;
+  position: relative;
+  cursor: pointer;
+  &__avatar {
+    display: flex;
+    border-radius: 4%;
+    overflow: hidden;
+    img {
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+  }
+  &__summary {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    z-index: 10;
+    width: 96%;
+    height: 96%;
+    background: rgba(0, 0, 0, 0.8);
+    &__name {
+      color: #ffeb3b;
+      text-align: center;
+    }
+  }
+  &__active {
+    animation: scaleOut ease-in-out;
+    animation-duration: 500ms;
+    border: 2px solid #ffeb3b;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &:focus {
+    outline: none !important;
+    border: 2px solid #ffeb3b;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &:hover {
+    outline: none !important;
+    border: 2px solid #7c7c7c;
+  }
+  &:before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(16/16 * 100%);
+  }
+}
+
+.card__active > .card__summary {
+  visibility: visible;
+}
+
+@keyframes scaleOut {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  0% {
+    transform: scale(1.0);
+  }
+}

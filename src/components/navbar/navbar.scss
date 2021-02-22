@@ -1,0 +1,23 @@
+.navbar {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 100px auto;
+  height: 52px;
+  background: #bebc0a;
+  font-weight: 500;
+  &__ayoola {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: black;
+    color: #bebc0a;
+    height: 100%;
+    width: 100%;
+  }
+  &__title {
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
