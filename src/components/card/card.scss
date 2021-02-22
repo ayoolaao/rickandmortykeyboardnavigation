@@ -1,14 +1,13 @@
 .card {
   display: flex;
   border: 2px solid transparent;
+  border-radius: 6%;
   padding: 2%;
   position: relative;
-  &__active {
-    animation: scaleOut ease-in-out;
-    animation-duration: 500ms;
-  }
+  cursor: pointer;
   &__avatar {
     display: flex;
+    border-radius: 4%;
     overflow: hidden;
     img {
       display: block;
@@ -17,6 +16,7 @@
     }
   }
   &__summary {
+    visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,14 @@
     background: rgba(0, 0, 0, 0.8);
     &__name {
       color: #ffeb3b;
+      text-align: center;
     }
+  }
+  &__active {
+    animation: scaleOut ease-in-out;
+    animation-duration: 500ms;
+    border: 2px solid #ffeb3b;
+    background: rgba(0, 0, 0, 0.2);
   }
   &:focus {
     outline: none !important;
@@ -38,7 +45,7 @@
   }
   &:hover {
     outline: none !important;
-    border: 2px solid #d2d2d2;
+    border: 2px solid #7c7c7c;
   }
   &:before {
     content: "";
@@ -47,6 +54,10 @@
     width: 0;
     padding-bottom: calc(16/16 * 100%);
   }
+}
+
+.card__active > .card__summary {
+  visibility: visible;
 }
 
 @keyframes scaleOut {
